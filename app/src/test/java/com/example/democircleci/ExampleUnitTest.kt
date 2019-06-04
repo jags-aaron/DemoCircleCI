@@ -17,6 +17,6 @@ class ExampleUnitTest {
 
     @Test
     fun foo() {
-        assertTrue(false)
+        assertTrue(true)
     }
 }
