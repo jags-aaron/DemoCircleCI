@@ -1,4 +1,4 @@
-package com.example.democircleci
+package com.neko.democircleci
 
 import org.junit.Test
 
