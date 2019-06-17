@@ -188,7 +188,7 @@ workflows:
       - checkout:
           filters:
             tags:
-              only: /alpha/
+              only: /^config-test.*/
             branches:
               ignore: /.*/
       - lint:
@@ -196,19 +196,19 @@ workflows:
             - checkout
           filters:
             tags:
-              only: /alpha/
+              only: /^config-test.*/
       - test:
           requires:
             - checkout
           filters:
             tags:
-              only: /alpha/
+              only: /^config-test.*/
       - test_instrumentation:
           requires:
             - checkout
           filters:
             tags:
-              only: /alpha/
+              only: /^config-test.*/
       - deploy_crashlytics:
           requires:
             - lint
@@ -216,7 +216,7 @@ workflows:
             - test_instrumentation
           filters:
             tags:
-              only: /alpha/
+              only: /^config-test.*/
 
   build_and_deploy_prod:
     jobs:
