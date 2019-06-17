@@ -188,7 +188,7 @@ workflows:
       - checkout:
           filters:
             tags:
-              only: /_alpha/
+              only: /alpha/
             branches:
               ignore: /.*/
       - lint:
@@ -196,19 +196,19 @@ workflows:
             - checkout
           filters:
             tags:
-              only: /_alpha/
+              only: /alpha/
       - test:
           requires:
             - checkout
           filters:
             tags:
-              only: /_alpha/
+              only: /alpha/
       - test_instrumentation:
           requires:
             - checkout
           filters:
             tags:
-              only: /_alpha/
+              only: /alpha/
       - deploy_crashlytics:
           requires:
             - lint
@@ -216,14 +216,14 @@ workflows:
             - test_instrumentation
           filters:
             tags:
-              only: /_alpha/
+              only: /alpha/
 
   build_and_deploy_prod:
     jobs:
       - checkout:
           filters:
             tags:
-              only: /_release/
+              only: /release/
             branches:
               ignore: /.*/
       - lint:
@@ -231,19 +231,19 @@ workflows:
             - checkout
           filters:
             tags:
-              only: /_release/
+              only: /release/
       - test:
           requires:
             - checkout
           filters:
             tags:
-              only: /_release/
+              only: /release/
       - test_instrumentation:
           requires:
             - checkout
           filters:
             tags:
-              only: /_release/
+              only: /release/
       - hold:
           requires:
             - test
@@ -251,10 +251,10 @@ workflows:
             - test_instrumentation
           filters:
             tags:
-              only: /_release/
+              only: /release/
       - deploy_google_play_store:
           requires:
             - hold
           filters:
             tags:
-              only: /_release/
+              only: /release/
