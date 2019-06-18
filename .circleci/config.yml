@@ -188,7 +188,7 @@ workflows:
       - checkout:
           filters:
             tags:
-              only: /_alpha/
+              only: /^alpha.*/
             branches:
               ignore: /.*/
       - lint:
@@ -196,19 +196,19 @@ workflows:
             - checkout
           filters:
             tags:
-              only: /_alpha/
+              only: /^alpha.*/
       - test:
           requires:
             - checkout
           filters:
             tags:
-              only: /_alpha/
+              only: /^alpha.*/
       - test_instrumentation:
           requires:
             - checkout
           filters:
             tags:
-              only: /_alpha/
+              only: /^alpha.*/
       - deploy_crashlytics:
           requires:
             - lint
