@@ -189,8 +189,8 @@ workflows:
           filters:
             tags:
               only: /_alpha/
-#            branches:
-#              ignore: /.*/
+            branches:
+              ignore: /.*/
       - lint:
           requires:
             - checkout
