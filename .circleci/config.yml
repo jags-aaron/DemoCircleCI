@@ -188,7 +188,7 @@ workflows:
       - checkout:
           filters:
             tags:
-              only: /^alpha-[0-9]\.[0-9]\.[0-9]/
+              only: /alpha-[0-9]\.[0-9]\.[0-9]/
             branches:
               ignore: /.*/
       - lint:
@@ -196,19 +196,19 @@ workflows:
             - checkout
           filters:
             tags:
-              only: /^alpha-[0-9]\.[0-9]\.[0-9]/
+              only: /alpha-[0-9]\.[0-9]\.[0-9]/
       - test:
           requires:
             - checkout
           filters:
             tags:
-              only: /^alpha-[0-9]\.[0-9]\.[0-9]/
+              only: /alpha-[0-9]\.[0-9]\.[0-9]/
       - test_instrumentation:
           requires:
             - checkout
           filters:
             tags:
-              only: /^alpha-[0-9]\.[0-9]\.[0-9]/
+              only: /alpha-[0-9]\.[0-9]\.[0-9]/
       - deploy_crashlytics:
           requires:
             - lint
